@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="183"/>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-t4-XEg">
-                                <rect key="frame" x="0.0" y="237" width="375" height="430"/>
+                                <rect key="frame" x="0.0" y="227" width="375" height="440"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vg4-tG-ESP">
@@ -37,7 +37,7 @@
                             <constraint firstAttribute="bottom" secondItem="cyL-t4-XEg" secondAttribute="bottom" id="5Nn-kd-QgA"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Al1-im-1e3"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="leading" secondItem="Mjq-it-eXK" secondAttribute="leading" id="CPK-YD-YQY"/>
-                            <constraint firstItem="cyL-t4-XEg" firstAttribute="top" secondItem="Mjq-it-eXK" secondAttribute="bottom" constant="10" id="Jkt-bA-lkd"/>
+                            <constraint firstItem="cyL-t4-XEg" firstAttribute="top" secondItem="Mjq-it-eXK" secondAttribute="bottom" id="Jkt-bA-lkd"/>
                             <constraint firstItem="Mjq-it-eXK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ldp-YS-jNU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cyL-t4-XEg" secondAttribute="trailing" id="aHk-EX-9F8"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="trailing" secondItem="Mjq-it-eXK" secondAttribute="trailing" id="g6V-p9-8Zy"/>
