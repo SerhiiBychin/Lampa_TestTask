@@ -28,7 +28,7 @@ final class TMDBAPIService: TMDBAPIProvider {
     
     
     func fetchPopularMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
-        httpClient.get(url: "https://api.themoviedb.org/3/movie/top_rated?api_key=\(Constants.apiKey)&language=en-US") { (result) in
+        httpClient.get(url: "https://api.themoviedb.org/3/movie/popular?api_key=\(Constants.apiKey)&language=en-US") { (result) in
             switch result {
             case .success(let data):
                 guard let response = try? JSONDecoder().decode(MoviesResponse.self, from: data) else { return }

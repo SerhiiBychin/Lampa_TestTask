@@ -20,7 +20,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjq-it-eXK">
                                 <rect key="frame" x="0.0" y="44" width="375" height="183"/>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-t4-XEg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-t4-XEg">
                                 <rect key="frame" x="0.0" y="237" width="375" height="430"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -34,7 +34,7 @@
                             <constraint firstItem="Vg4-tG-ESP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="242-BB-HZx"/>
                             <constraint firstItem="Vg4-tG-ESP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2BA-GK-Q6u"/>
                             <constraint firstItem="Vg4-tG-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126.5" id="4hz-4u-djT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cyL-t4-XEg" secondAttribute="bottom" id="5Nn-kd-QgA"/>
+                            <constraint firstAttribute="bottom" secondItem="cyL-t4-XEg" secondAttribute="bottom" id="5Nn-kd-QgA"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Al1-im-1e3"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="leading" secondItem="Mjq-it-eXK" secondAttribute="leading" id="CPK-YD-YQY"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="top" secondItem="Mjq-it-eXK" secondAttribute="bottom" constant="10" id="Jkt-bA-lkd"/>
@@ -50,7 +50,7 @@
                     <connections>
                         <outlet property="pageControl" destination="Vg4-tG-ESP" id="S4I-j3-COw"/>
                         <outlet property="scrollView" destination="Mjq-it-eXK" id="zUu-4V-720"/>
-                        <outlet property="tableview" destination="cyL-t4-XEg" id="8ap-KT-TMR"/>
+                        <outlet property="tableView" destination="cyL-t4-XEg" id="8ap-KT-TMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

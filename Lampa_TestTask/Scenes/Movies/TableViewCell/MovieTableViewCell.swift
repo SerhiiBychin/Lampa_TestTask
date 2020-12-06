@@ -26,4 +26,13 @@ class MovieTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    func configure(with item: MovieItemViewModel) {
+        movieTitleLabel.text = item.title
+        movieOverviewLabel.text = item.overview
+        releaseDateLabel.text = item.releaseDate
+        if let imageURL = item.imageURL {
+            movieImageView.loadImage(from: URL(string: imageURL)!)
+        }
+    }
 }

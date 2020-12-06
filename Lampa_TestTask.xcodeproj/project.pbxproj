@@ -25,6 +25,7 @@
 		01D042A8257D51330065969D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042A7257D51330065969D /* Observable.swift */; };
 		01D042AB257D51650065969D /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AA257D51650065969D /* MoviesViewModel.swift */; };
 		01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AD257D5C4C0065969D /* AppCoordinator.swift */; };
+		01D042B2257D621D0065969D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042B1257D621D0065969D /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		01D042A7257D51330065969D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		01D042AA257D51650065969D /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		01D042AD257D5C4C0065969D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		01D042B1257D621D0065969D /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		013C800A257BE8D900C001E7 /* Lampa_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				01D042B0257D62070065969D /* Extensions */,
 				013AB848257D192000490AE7 /* Services */,
 				013AB854257D314500490AE7 /* Models */,
 				013C8028257BFDAD00C001E7 /* Scenes */,
@@ -165,6 +168,14 @@
 				01D042AA257D51650065969D /* MoviesViewModel.swift */,
 			);
 			path = Movies;
+			sourceTree = "<group>";
+		};
+		01D042B0257D62070065969D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01D042B1257D621D0065969D /* UIImageExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 				013AB863257D402700490AE7 /* MovieItemViewModel.swift in Sources */,
 				01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */,
 				013AB84B257D1B4C00490AE7 /* HTTPClient.swift in Sources */,
+				01D042B2257D621D0065969D /* UIImageExtension.swift in Sources */,
 				01D042AB257D51650065969D /* MoviesViewModel.swift in Sources */,
 				013C800C257BE8D900C001E7 /* AppDelegate.swift in Sources */,
 				013AB84F257D1EF100490AE7 /* HTTPClientError.swift in Sources */,

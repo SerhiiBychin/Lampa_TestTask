@@ -14,8 +14,9 @@ final class AppCoordinator {
     func startInterface(in window: UIWindow) {
 
         let moviesVC = MoviesViewController.Factory.default
+        let navigationVC = UINavigationController(rootViewController: moviesVC)
         
-        window.rootViewController = moviesVC
+        window.rootViewController = navigationVC
         window.makeKeyAndVisible()
     }
 }

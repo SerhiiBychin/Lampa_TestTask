@@ -11,7 +11,7 @@ class MoviesViewController: UIViewController {
     //MARK: - IBOutlets -
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     
     private var dataSource = [MovieItemViewModel]()
@@ -20,6 +20,8 @@ class MoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegates()
+        registerTableViewCell()
         bind()
     }
     
@@ -27,11 +29,38 @@ class MoviesViewController: UIViewController {
     func bind() {
         moviesViewModel.movies.bind { movies in
             self.dataSource = movies.map { MovieItemViewModel(movie: $0) }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
         
         moviesViewModel.errorMessage.bind { (message) in
             
         }
+    }
+}
+
+
+extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
+        cell.configure(with: dataSource[indexPath.row])
+        return cell
+    }
+    
+    func setDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    
+    func registerTableViewCell() {
+        let userCell = UINib(nibName: "MovieTableViewCell", bundle: nil)
+        tableView.register(userCell, forCellReuseIdentifier: "MovieTableViewCell")
     }
 }
 
