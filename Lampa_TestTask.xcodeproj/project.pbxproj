@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		013C800C257BE8D900C001E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C800B257BE8D900C001E7 /* AppDelegate.swift */; };
 		013C800E257BE8D900C001E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C800D257BE8D900C001E7 /* SceneDelegate.swift */; };
-		013C8010257BE8D900C001E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C800F257BE8D900C001E7 /* ViewController.swift */; };
+		013C8010257BE8D900C001E7 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C800F257BE8D900C001E7 /* MoviesViewController.swift */; };
 		013C8013257BE8D900C001E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C8011257BE8D900C001E7 /* Main.storyboard */; };
 		013C8015257BE8DB00C001E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013C8014257BE8DB00C001E7 /* Assets.xcassets */; };
 		013C8018257BE8DB00C001E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C8016257BE8DB00C001E7 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		013C8008257BE8D900C001E7 /* Lampa_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lampa_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013C800B257BE8D900C001E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013C800D257BE8D900C001E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		013C800F257BE8D900C001E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		013C800F257BE8D900C001E7 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		013C8012257BE8D900C001E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		013C8014257BE8DB00C001E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013C8017257BE8DB00C001E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,39 @@
 		013C800A257BE8D900C001E7 /* Lampa_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				013C8028257BFDAD00C001E7 /* Scenes */,
+				013C8026257BF3EC00C001E7 /* Storyboards */,
 				013C800B257BE8D900C001E7 /* AppDelegate.swift */,
 				013C800D257BE8D900C001E7 /* SceneDelegate.swift */,
-				013C800F257BE8D900C001E7 /* ViewController.swift */,
-				013C8011257BE8D900C001E7 /* Main.storyboard */,
 				013C8014257BE8DB00C001E7 /* Assets.xcassets */,
 				013C8016257BE8DB00C001E7 /* LaunchScreen.storyboard */,
 				013C8019257BE8DB00C001E7 /* Info.plist */,
 			);
 			path = Lampa_TestTask;
+			sourceTree = "<group>";
+		};
+		013C8026257BF3EC00C001E7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				013C8011257BE8D900C001E7 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		013C8028257BFDAD00C001E7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				013C8029257BFDB800C001E7 /* Movies */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		013C8029257BFDB800C001E7 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				013C800F257BE8D900C001E7 /* MoviesViewController.swift */,
+			);
+			path = Movies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013C8010257BE8D900C001E7 /* ViewController.swift in Sources */,
+				013C8010257BE8D900C001E7 /* MoviesViewController.swift in Sources */,
 				013C800C257BE8D900C001E7 /* AppDelegate.swift in Sources */,
 				013C800E257BE8D900C001E7 /* SceneDelegate.swift in Sources */,
 			);
