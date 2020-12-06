@@ -47,6 +47,11 @@
                     <navigationItem key="navigationItem" title="Movies" id="7Fd-8r-dUZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="J5A-8a-NKg"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pageControl" destination="Vg4-tG-ESP" id="S4I-j3-COw"/>
+                        <outlet property="scrollView" destination="Mjq-it-eXK" id="zUu-4V-720"/>
+                        <outlet property="tableview" destination="cyL-t4-XEg" id="8ap-KT-TMR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,11 @@
 import UIKit
 
 class MoviesViewController: UIViewController {
+    //MARK: - IBOutlets -
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var tableview: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
