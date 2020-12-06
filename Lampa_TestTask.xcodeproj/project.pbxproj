@@ -26,6 +26,7 @@
 		01D042AB257D51650065969D /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AA257D51650065969D /* MoviesViewModel.swift */; };
 		01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AD257D5C4C0065969D /* AppCoordinator.swift */; };
 		01D042B2257D621D0065969D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042B1257D621D0065969D /* UIImageExtension.swift */; };
+		01D042B5257D789F0065969D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042B4257D789F0065969D /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		01D042AA257D51650065969D /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		01D042AD257D5C4C0065969D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		01D042B1257D621D0065969D /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		01D042B4257D789F0065969D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				01D042B1257D621D0065969D /* UIImageExtension.swift */,
+				01D042B4257D789F0065969D /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				013AB85B257D366E00490AE7 /* TMDBAPIServiceResponses.swift in Sources */,
 				013C8010257BE8D900C001E7 /* MoviesViewController.swift in Sources */,
 				013AB852257D2F0600490AE7 /* TMDBAPIService.swift in Sources */,
+				01D042B5257D789F0065969D /* UIViewControllerExtension.swift in Sources */,
 				01D042A8257D51330065969D /* Observable.swift in Sources */,
 				013AB863257D402700490AE7 /* MovieItemViewModel.swift in Sources */,
 				01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */,

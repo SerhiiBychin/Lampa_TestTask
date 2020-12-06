@@ -34,8 +34,9 @@ class MoviesViewController: UIViewController {
             }
         }
         
-        moviesViewModel.errorMessage.bind { (message) in
-            
+        moviesViewModel.errorMessage.bind { message in
+            guard let message = message else { return }
+            self.presentError(with: message)
         }
     }
 }
