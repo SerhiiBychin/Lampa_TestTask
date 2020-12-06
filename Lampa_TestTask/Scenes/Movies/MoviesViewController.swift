@@ -14,7 +14,8 @@ class MoviesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    private var dataSource = [MovieItemViewModel]()
+    private var popularMovies = [MovieItemViewModel]()
+    private var topRatedMovies = [MovieItemViewModel]()
     private var moviesViewModel: MoviesViewModel!
     
     
@@ -27,13 +28,18 @@ class MoviesViewController: UIViewController {
     
     
     func bind() {
-        moviesViewModel.movies.bind { movies in
-            self.dataSource = movies.map { MovieItemViewModel(movie: $0) }
+        moviesViewModel.popularMovies.bind { movies in
+            self.popularMovies = movies.map { MovieItemViewModel(movie: $0) }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
         
+        moviesViewModel.topRatedMovies.bind { movies in
+            self.topRatedMovies = movies.map { MovieItemViewModel(movie: $0) }
+            
+        }
+
         moviesViewModel.errorMessage.bind { message in
             guard let message = message else { return }
             self.presentError(with: message)
@@ -44,12 +50,12 @@ class MoviesViewController: UIViewController {
 
 extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataSource.count
+        popularMovies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
-        cell.configure(with: dataSource[indexPath.row])
+        cell.configure(with: popularMovies[indexPath.row])
         return cell
     }
     

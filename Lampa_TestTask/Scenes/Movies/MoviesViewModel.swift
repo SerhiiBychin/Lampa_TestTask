@@ -10,7 +10,8 @@ import Foundation
 class MoviesViewModel {
     private let tmdbAPIService: TMDBAPIProvider
         
-    var movies: Observable<[Movie]> = Observable([])
+    var popularMovies: Observable<[Movie]> = Observable([])
+    var topRatedMovies: Observable<[Movie]> = Observable([])
     var errorMessage: Observable<String?> = Observable(nil)
     
     
@@ -25,12 +26,26 @@ class MoviesViewModel {
             switch result {
             
             case .success(let movies):
-                self.movies.value = movies
+                self.popularMovies.value = movies
             case .failure(let error):
                 self.errorMessage.value = error.localizedDescription
             }
         }
     }
+    
+    
+    private func fetchTopRatedMovies() {
+        tmdbAPIService.fetchTopRatedMovies { (result) in
+            switch result {
+            
+            case .success(let movies):
+                self.topRatedMovies.value = movies
+            case .failure(let error):
+                self.errorMessage.value = error.localizedDescription
+            }
+        }
+    }
+
 }
 
 
