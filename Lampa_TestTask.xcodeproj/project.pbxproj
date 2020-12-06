@@ -24,6 +24,7 @@
 		013C8018257BE8DB00C001E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C8016257BE8DB00C001E7 /* LaunchScreen.storyboard */; };
 		01D042A8257D51330065969D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042A7257D51330065969D /* Observable.swift */; };
 		01D042AB257D51650065969D /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AA257D51650065969D /* MoviesViewModel.swift */; };
+		01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AD257D5C4C0065969D /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		013C8019257BE8DB00C001E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D042A7257D51330065969D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		01D042AA257D51650065969D /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		01D042AD257D5C4C0065969D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				013AB85F257D3B9000490AE7 /* StaticFactory.swift */,
 				01D042A7257D51330065969D /* Observable.swift */,
+				01D042AD257D5C4C0065969D /* AppCoordinator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				013AB852257D2F0600490AE7 /* TMDBAPIService.swift in Sources */,
 				01D042A8257D51330065969D /* Observable.swift in Sources */,
 				013AB863257D402700490AE7 /* MovieItemViewModel.swift in Sources */,
+				01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */,
 				013AB84B257D1B4C00490AE7 /* HTTPClient.swift in Sources */,
 				01D042AB257D51650065969D /* MoviesViewModel.swift in Sources */,
 				013C800C257BE8D900C001E7 /* AppDelegate.swift in Sources */,

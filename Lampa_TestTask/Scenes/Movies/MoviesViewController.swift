@@ -15,7 +15,7 @@ class MoviesViewController: UIViewController {
     
     
     private var dataSource = [MovieItemViewModel]()
-    var moviesViewModel: MoviesViewModel!
+    private var moviesViewModel: MoviesViewModel!
     
     
     override func viewDidLoad() {
