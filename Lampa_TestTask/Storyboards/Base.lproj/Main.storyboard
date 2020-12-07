@@ -18,11 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjq-it-eXK">
-                                <rect key="frame" x="0.0" y="44" width="375" height="293"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="223"/>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-t4-XEg">
-                                <rect key="frame" x="0.0" y="337" width="375" height="330"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="qO7-ta-A1f"/>
+                                </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pF-W6-4Cb">
                                 <rect key="frame" x="259" y="60" width="100" height="30"/>
@@ -41,13 +44,12 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vg4-tG-ESP">
-                                <rect key="frame" x="126.5" y="304" width="122" height="28"/>
+                                <rect key="frame" x="126.5" y="229" width="122" height="28"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Vg4-tG-ESP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="260" id="242-BB-HZx"/>
                             <constraint firstItem="Vg4-tG-ESP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2BA-GK-Q6u"/>
                             <constraint firstItem="Vg4-tG-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126.5" id="4hz-4u-djT"/>
                             <constraint firstAttribute="bottom" secondItem="cyL-t4-XEg" secondAttribute="bottom" id="5Nn-kd-QgA"/>
@@ -57,9 +59,9 @@
                             <constraint firstItem="Mjq-it-eXK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ldp-YS-jNU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cyL-t4-XEg" secondAttribute="trailing" id="aHk-EX-9F8"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="trailing" secondItem="Mjq-it-eXK" secondAttribute="trailing" id="g6V-p9-8Zy"/>
-                            <constraint firstItem="Vg4-tG-ESP" firstAttribute="bottom" secondItem="Mjq-it-eXK" secondAttribute="bottom" constant="-5" id="gzN-pS-iKR"/>
                             <constraint firstItem="5pF-W6-4Cb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="lgs-Iu-MdC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5pF-W6-4Cb" secondAttribute="trailing" constant="16" id="qDX-DP-jnb"/>
+                            <constraint firstItem="Vg4-tG-ESP" firstAttribute="bottom" secondItem="Mjq-it-eXK" secondAttribute="bottom" constant="-10" id="yGx-oo-mIB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="7Fd-8r-dUZ">
