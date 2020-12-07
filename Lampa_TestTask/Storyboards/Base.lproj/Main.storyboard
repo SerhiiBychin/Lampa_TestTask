@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="30" id="4ro-vI-d4k"/>
                                     <constraint firstAttribute="width" constant="100" id="BAt-Ts-zja"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
