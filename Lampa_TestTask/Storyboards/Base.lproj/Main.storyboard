@@ -12,36 +12,56 @@
         <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MoviesViewController" customModule="Lampa_TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoviesViewController" id="BYZ-38-t0r" customClass="MoviesViewController" customModule="Lampa_TestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjq-it-eXK">
-                                <rect key="frame" x="0.0" y="44" width="375" height="183"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="223"/>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-t4-XEg">
-                                <rect key="frame" x="0.0" y="237" width="375" height="430"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-t4-XEg">
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="qO7-ta-A1f"/>
+                                </constraints>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pF-W6-4Cb">
+                                <rect key="frame" x="259" y="60" width="100" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4ro-vI-d4k"/>
+                                    <constraint firstAttribute="width" constant="100" id="BAt-Ts-zja"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vg4-tG-ESP">
-                                <rect key="frame" x="126.5" y="184" width="122" height="28"/>
+                                <rect key="frame" x="126.5" y="229" width="122" height="28"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Vg4-tG-ESP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="242-BB-HZx"/>
                             <constraint firstItem="Vg4-tG-ESP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2BA-GK-Q6u"/>
                             <constraint firstItem="Vg4-tG-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126.5" id="4hz-4u-djT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cyL-t4-XEg" secondAttribute="bottom" id="5Nn-kd-QgA"/>
+                            <constraint firstAttribute="bottom" secondItem="cyL-t4-XEg" secondAttribute="bottom" id="5Nn-kd-QgA"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Al1-im-1e3"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="leading" secondItem="Mjq-it-eXK" secondAttribute="leading" id="CPK-YD-YQY"/>
-                            <constraint firstItem="cyL-t4-XEg" firstAttribute="top" secondItem="Mjq-it-eXK" secondAttribute="bottom" constant="10" id="Jkt-bA-lkd"/>
+                            <constraint firstItem="cyL-t4-XEg" firstAttribute="top" secondItem="Mjq-it-eXK" secondAttribute="bottom" id="Jkt-bA-lkd"/>
                             <constraint firstItem="Mjq-it-eXK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ldp-YS-jNU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cyL-t4-XEg" secondAttribute="trailing" id="aHk-EX-9F8"/>
                             <constraint firstItem="cyL-t4-XEg" firstAttribute="trailing" secondItem="Mjq-it-eXK" secondAttribute="trailing" id="g6V-p9-8Zy"/>
-                            <constraint firstItem="Vg4-tG-ESP" firstAttribute="bottom" secondItem="Mjq-it-eXK" secondAttribute="bottom" constant="-15" id="gzN-pS-iKR"/>
+                            <constraint firstItem="5pF-W6-4Cb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="lgs-Iu-MdC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5pF-W6-4Cb" secondAttribute="trailing" constant="16" id="qDX-DP-jnb"/>
+                            <constraint firstItem="Vg4-tG-ESP" firstAttribute="bottom" secondItem="Mjq-it-eXK" secondAttribute="bottom" constant="-10" id="yGx-oo-mIB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="7Fd-8r-dUZ">
@@ -50,7 +70,7 @@
                     <connections>
                         <outlet property="pageControl" destination="Vg4-tG-ESP" id="S4I-j3-COw"/>
                         <outlet property="scrollView" destination="Mjq-it-eXK" id="zUu-4V-720"/>
-                        <outlet property="tableview" destination="cyL-t4-XEg" id="8ap-KT-TMR"/>
+                        <outlet property="tableView" destination="cyL-t4-XEg" id="8ap-KT-TMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
