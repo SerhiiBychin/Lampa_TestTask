@@ -18,6 +18,7 @@ class MoviesViewModel {
     init(tmdbAPIService: TMDBAPIProvider) {
         self.tmdbAPIService = tmdbAPIService
         fetchPopularMovies()
+        fetchTopRatedMovies()
     }
     
     
