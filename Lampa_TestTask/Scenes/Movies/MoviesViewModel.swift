@@ -23,26 +23,26 @@ class MoviesViewModel {
     
     
     private func fetchPopularMovies() {
-        tmdbAPIService.fetchPopularMovies { (result) in
+        tmdbAPIService.fetchPopularMovies { [weak self] (result) in
             switch result {
             
             case .success(let movies):
-                self.popularMovies.value = movies
+                self?.popularMovies.value = movies
             case .failure(let error):
-                self.errorMessage.value = error.localizedDescription
+                self?.errorMessage.value = error.localizedDescription
             }
         }
     }
     
     
     private func fetchTopRatedMovies() {
-        tmdbAPIService.fetchTopRatedMovies { (result) in
+        tmdbAPIService.fetchTopRatedMovies { [weak self] (result) in
             switch result {
             
             case .success(let movies):
-                self.topRatedMovies.value = movies
+                self?.topRatedMovies.value = movies
             case .failure(let error):
-                self.errorMessage.value = error.localizedDescription
+                self?.errorMessage.value = error.localizedDescription
             }
         }
     }

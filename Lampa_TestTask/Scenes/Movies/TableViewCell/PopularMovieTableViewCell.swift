@@ -1,20 +1,20 @@
 //
-//  MovieTableViewCell.swift
+//  PopularMovieTableViewCell.swift
 //  Lampa_TestTask
 //
-//  Created by Serhii Bychin on 06.12.2020.
+//  Created by Serhii Bychin on 08.12.2020.
 //
 
 import UIKit
 
-class MovieTableViewCell: UITableViewCell {
+class PopularMovieTableViewCell: UITableViewCell {
     //MARK: - IBOutlets -
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieOverviewLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,7 +25,6 @@ class MovieTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
     
     func configure(with item: MovieItemViewModel) {
         movieTitleLabel.text = item.title

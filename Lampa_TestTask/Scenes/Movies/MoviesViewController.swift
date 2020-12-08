@@ -9,44 +9,39 @@ import UIKit
 
 class MoviesViewController: UIViewController {
     //MARK: - IBOutlets -
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var tableView: UITableView!
     
-    
-    private var popularMovies = [MovieItemViewModel]()
     private var topRatedMovies = [MovieItemViewModel]()
-    private var moviePages = [MoviePage]()
+    private var popularMovies = [MovieItemViewModel]()
     private var moviesViewModel: MoviesViewModel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableViewDelegates()
-        setScrollViewDelegates()
-        registerTableViewCell()
+        setupTableView()
         bind()
     }
     
     
     func bind() {
-        moviesViewModel.popularMovies.bind { movies in
+        moviesViewModel.topRatedMovies.bind { [weak self] movies in
+            guard let self = self else { return }
+            self.topRatedMovies = movies.map { MovieItemViewModel(movie: $0) }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        moviesViewModel.popularMovies.bind { [weak self] movies in
+            guard let self = self else { return }
             self.popularMovies = movies.map { MovieItemViewModel(movie: $0) }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
         
-        moviesViewModel.topRatedMovies.bind { movies in
-            self.topRatedMovies = movies.map { MovieItemViewModel(movie: $0) }
-            DispatchQueue.main.async {
-                self.createMoviePages(with: self.topRatedMovies)
-                self.setupMoviePageScrollView()
-                self.setupPageControl()
-            }
-        }
-        
-        moviesViewModel.errorMessage.bind { message in
+        moviesViewModel.errorMessage.bind { [weak self] message in
+            guard let self = self else { return }
             guard let message = message else { return }
             self.presentError(with: message)
         }
@@ -56,64 +51,32 @@ class MoviesViewController: UIViewController {
 
 extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        popularMovies.count
+        topRatedMovies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
-        cell.configure(with: popularMovies[indexPath.row])
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopRatedMoviesCell", for: indexPath) as! TopRatedMoviesCell
+            cell.setCollectionViewDataSource(topRatedMovies)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PopularMovieTableViewCell", for: indexPath) as! PopularMovieTableViewCell
+            cell.configure(with: popularMovies[indexPath.row])
+            return cell
+        }
     }
     
-    func setTableViewDelegates() {
+    func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        registerTableViewCell()
     }
-    
     
     func registerTableViewCell() {
-        let userCell = UINib(nibName: "MovieTableViewCell", bundle: nil)
-        tableView.register(userCell, forCellReuseIdentifier: "MovieTableViewCell")
-    }
-}
-
-
-extension MoviesViewController: UIScrollViewDelegate {
-    func createMoviePages(with topRatedMovies: [MovieItemViewModel]) {
-        topRatedMovies.forEach { (item) in
-            let moviePage: MoviePage = Bundle.main.loadNibNamed("MoviePage", owner: self, options: nil)?.first as! MoviePage
-            moviePage.configure(with: item)
-            moviePages.append(moviePage)
-        }
-    }
-    
-    
-    func setupMoviePageScrollView() {
-        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - tableView.frame.height - (self.navigationController?.navigationBar.frame.size.height)! - UIApplication.shared.statusBarFrame.size.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(moviePages.count), height: view.frame.height - tableView.frame.height - (self.navigationController?.navigationBar.frame.size.height)! - UIApplication.shared.statusBarFrame.size.height)
-        
-        
-        for i in 0..<moviePages.count {
-            moviePages[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height - tableView.frame.height - (self.navigationController?.navigationBar.frame.size.height)! - UIApplication.shared.statusBarFrame.size.height)
-            scrollView.addSubview(moviePages[i])
-        }
-    }
-    
-    
-    func setupPageControl() {
-        pageControl.numberOfPages = moviePages.count
-        pageControl.currentPage = 0
-    }
-    
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        pageControl.currentPage = Int(pageIndex)
-    }
-    
-    
-    func setScrollViewDelegates() {
-        scrollView.delegate = self
+        let topRatedMoviesCell = UINib(nibName: "TopRatedMoviesCell", bundle: nil)
+        let popularMoviesCell = UINib(nibName: "PopularMovieTableViewCell", bundle: nil)
+        tableView.register(topRatedMoviesCell, forCellReuseIdentifier: "TopRatedMoviesCell")
+        tableView.register(popularMoviesCell, forCellReuseIdentifier: "PopularMovieTableViewCell")
     }
 }
 
