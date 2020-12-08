@@ -32,7 +32,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="7Fd-8r-dUZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="J5A-8a-NKg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="J5A-8a-NKg">
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="BYZ-38-t0r" id="o95-qZ-0MP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cyL-t4-XEg" id="8ap-KT-TMR"/>
@@ -41,6 +45,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="78.710644677661179"/>
+        </scene>
+        <!--Search Movies View Controller-->
+        <scene sceneID="z9N-5G-uBh">
+            <objects>
+                <viewController storyboardIdentifier="SearchMoviesViewController" id="uJq-jL-eR1" customClass="SearchMoviesViewController" customModule="Lampa_TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j25-IP-CMr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zbT-uz-mYp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FvU-bj-Pld">
+                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="huj-A8-qLj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="huj-A8-qLj" firstAttribute="bottom" secondItem="FvU-bj-Pld" secondAttribute="bottom" id="4z5-Fj-QIo"/>
+                            <constraint firstItem="FvU-bj-Pld" firstAttribute="top" secondItem="zbT-uz-mYp" secondAttribute="bottom" id="6GT-TL-gUp"/>
+                            <constraint firstItem="zbT-uz-mYp" firstAttribute="leading" secondItem="huj-A8-qLj" secondAttribute="leading" id="QfR-5y-sFc"/>
+                            <constraint firstItem="FvU-bj-Pld" firstAttribute="leading" secondItem="huj-A8-qLj" secondAttribute="leading" id="Vr1-zO-siR"/>
+                            <constraint firstItem="zbT-uz-mYp" firstAttribute="top" secondItem="huj-A8-qLj" secondAttribute="top" id="cdy-eH-day"/>
+                            <constraint firstItem="huj-A8-qLj" firstAttribute="trailing" secondItem="zbT-uz-mYp" secondAttribute="trailing" id="jU2-DT-Lty"/>
+                            <constraint firstItem="huj-A8-qLj" firstAttribute="trailing" secondItem="FvU-bj-Pld" secondAttribute="trailing" id="uuT-AC-n3h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="zbT-uz-mYp" id="7s6-Yo-xWF"/>
+                        <outlet property="tableView" destination="FvU-bj-Pld" id="HCv-za-m1t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1B-zO-aMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jqb-VX-s2c">

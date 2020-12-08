@@ -31,7 +31,7 @@ final class HTTPClient: HTTPClientProvider {
     
     
     func get(url: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        guard let url = URL(string: url) else { return completion(.failure(HTTPClientError.emptyURL(message: "Empty URL"))) }
+        guard let url = URL(string: url.replacingOccurrences(of: " ", with: "%20")) else { return completion(.failure(HTTPClientError.emptyURL(message: "Empty URL"))) }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         

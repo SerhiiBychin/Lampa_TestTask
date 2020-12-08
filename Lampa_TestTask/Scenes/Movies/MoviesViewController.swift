@@ -23,6 +23,13 @@ class MoviesViewController: UIViewController {
     }
     
     
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        let searchVC = SearchMoviesViewController.Factory.default
+        searchVC.navigationItem.title = "Search for movies"
+        self.navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
+    
     func bind() {
         moviesViewModel.topRatedMovies.bind { [weak self] movies in
             guard let self = self else { return }
@@ -43,7 +50,9 @@ class MoviesViewController: UIViewController {
         moviesViewModel.errorMessage.bind { [weak self] message in
             guard let self = self else { return }
             guard let message = message else { return }
-            self.presentError(with: message)
+            DispatchQueue.main.async {
+                self.presentError(with: message)
+            }
         }
     }
 }
@@ -64,6 +73,10 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(with: popularMovies[indexPath.row])
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func setupTableView() {
