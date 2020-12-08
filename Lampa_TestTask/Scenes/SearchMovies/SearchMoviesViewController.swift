@@ -12,10 +12,43 @@ class SearchMoviesViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    private var moviesSearchResult = [MovieItemViewModel]()
+    private var searchMoviesViewModel: SearchMoviesViewModel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+}
 
+
+extension SearchMoviesViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        moviesSearchResult.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularMovieTableViewCell", for: indexPath) as! PopularMovieTableViewCell
+        cell.configure(with: moviesSearchResult[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        registerTableViewCell()
+    }
+    
+    
+    func registerTableViewCell() {
+        let moviesCell = UINib(nibName: "PopularMovieTableViewCell", bundle: nil)
+        tableView.register(moviesCell, forCellReuseIdentifier: "PopularMovieTableViewCell")
     }
 }
 
@@ -23,9 +56,9 @@ class SearchMoviesViewController: UIViewController {
 extension SearchMoviesViewController: StaticFactory {
     enum Factory {
         static var `default`: SearchMoviesViewController {
-            guard let moviesVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchMoviesViewController") as? SearchMoviesViewController else { return SearchMoviesViewController() }
-//            moviesVC.moviesViewModel = MoviesViewModel(tmdbAPIService: TMDBAPIService.Factory.default)
-            return moviesVC
+            guard let searchMoviesVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchMoviesViewController") as? SearchMoviesViewController else { return SearchMoviesViewController() }
+            searchMoviesVC.searchMoviesViewModel = SearchMoviesViewModel(tmdbAPIService: TMDBAPIService.Factory.default)
+            return searchMoviesVC
         }
     }
 }

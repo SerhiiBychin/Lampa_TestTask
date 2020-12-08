@@ -73,6 +73,10 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
