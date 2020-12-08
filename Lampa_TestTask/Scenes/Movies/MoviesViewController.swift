@@ -23,6 +23,13 @@ class MoviesViewController: UIViewController {
     }
     
     
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        let searchVC = SearchMoviesViewController.Factory.default
+        searchVC.navigationItem.title = "Search for movies"
+        self.navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
+    
     func bind() {
         moviesViewModel.topRatedMovies.bind { [weak self] movies in
             guard let self = self else { return }

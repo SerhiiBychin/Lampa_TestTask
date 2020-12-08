@@ -25,6 +25,7 @@
 		013C8018257BE8DB00C001E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C8016257BE8DB00C001E7 /* LaunchScreen.storyboard */; };
 		0184CCAD2580221E00908E20 /* PopularMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184CCAB2580221E00908E20 /* PopularMovieTableViewCell.swift */; };
 		0184CCAE2580221E00908E20 /* PopularMovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0184CCAC2580221E00908E20 /* PopularMovieTableViewCell.xib */; };
+		0184CCB52580309400908E20 /* SearchMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184CCB42580309400908E20 /* SearchMoviesViewController.swift */; };
 		01D042A8257D51330065969D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042A7257D51330065969D /* Observable.swift */; };
 		01D042AB257D51650065969D /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AA257D51650065969D /* MoviesViewModel.swift */; };
 		01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042AD257D5C4C0065969D /* AppCoordinator.swift */; };
@@ -54,6 +55,7 @@
 		013C8019257BE8DB00C001E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0184CCAB2580221E00908E20 /* PopularMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewCell.swift; sourceTree = "<group>"; };
 		0184CCAC2580221E00908E20 /* PopularMovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMovieTableViewCell.xib; sourceTree = "<group>"; };
+		0184CCB42580309400908E20 /* SearchMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesViewController.swift; sourceTree = "<group>"; };
 		01D042A7257D51330065969D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		01D042AA257D51650065969D /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		01D042AD257D5C4C0065969D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				013C8029257BFDB800C001E7 /* Movies */,
+				0184CCB225802F1A00908E20 /* SearchMovies */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -181,6 +184,14 @@
 				01D042AA257D51650065969D /* MoviesViewModel.swift */,
 			);
 			path = Movies;
+			sourceTree = "<group>";
+		};
+		0184CCB225802F1A00908E20 /* SearchMovies */ = {
+			isa = PBXGroup;
+			children = (
+				0184CCB42580309400908E20 /* SearchMoviesViewController.swift */,
+			);
+			path = SearchMovies;
 			sourceTree = "<group>";
 		};
 		01D042B0257D62070065969D /* Extensions */ = {
@@ -282,6 +293,7 @@
 				013AB852257D2F0600490AE7 /* TMDBAPIService.swift in Sources */,
 				01D042B5257D789F0065969D /* UIViewControllerExtension.swift in Sources */,
 				01D042A8257D51330065969D /* Observable.swift in Sources */,
+				0184CCB52580309400908E20 /* SearchMoviesViewController.swift in Sources */,
 				013AB863257D402700490AE7 /* MovieItemViewModel.swift in Sources */,
 				01D042AE257D5C4C0065969D /* AppCoordinator.swift in Sources */,
 				013AB84B257D1B4C00490AE7 /* HTTPClient.swift in Sources */,
