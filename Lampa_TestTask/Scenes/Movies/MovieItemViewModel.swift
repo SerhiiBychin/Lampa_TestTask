@@ -16,7 +16,7 @@ struct MovieItemViewModel {
     init(movie: Movie) {
         self.title = movie.title
         self.overview = movie.overview
-        self.imageURL = "https://image.tmdb.org/t/p/w400" + movie.posterPath
-        self.releaseDate = movie.releaseDate
+        self.imageURL = "https://image.tmdb.org/t/p/w400" + (movie.posterPath ?? "")
+        self.releaseDate = movie.releaseDate ?? "Unknown"
     }
 }

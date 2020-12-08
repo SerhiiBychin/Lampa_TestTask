@@ -13,13 +13,38 @@ class SearchMoviesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    private var moviesSearchResult = [MovieItemViewModel]()
+    private var moviesSearchResult = [MovieItemViewModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     private var searchMoviesViewModel: SearchMoviesViewModel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupSearchBar()
+        bind()
+    }
+    
+    
+    func bind() {
+        searchMoviesViewModel.moviesSearchResult.bind { [weak self] (movies) in
+            guard let self = self else { return }
+            self.moviesSearchResult = movies.map { MovieItemViewModel(movie: $0) }
+        }
+        
+        searchMoviesViewModel.errorMessage.bind { [weak self] message in
+            guard let self = self else { return }
+            guard let message = message else { return }
+            DispatchQueue.main.async {
+                self.presentError(with: message)
+            }
+        }
     }
 }
 
@@ -49,6 +74,32 @@ extension SearchMoviesViewController: UITableViewDelegate, UITableViewDataSource
     func registerTableViewCell() {
         let moviesCell = UINib(nibName: "PopularMovieTableViewCell", bundle: nil)
         tableView.register(moviesCell, forCellReuseIdentifier: "PopularMovieTableViewCell")
+    }
+}
+
+
+extension SearchMoviesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !(searchText.count > 2) {
+            moviesSearchResult = []
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.searchMoviesViewModel.searchMovies(forQuery: searchText)
+        }
+    }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        if searchBar.text == "" { return }
+        searchMoviesViewModel.searchMovies(forQuery: searchBar.text!)
+    }
+    
+    
+    func setupSearchBar() {
+        searchBar.delegate = self
     }
 }
 

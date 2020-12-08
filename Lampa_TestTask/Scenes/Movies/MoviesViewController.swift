@@ -50,7 +50,9 @@ class MoviesViewController: UIViewController {
         moviesViewModel.errorMessage.bind { [weak self] message in
             guard let self = self else { return }
             guard let message = message else { return }
-            self.presentError(with: message)
+            DispatchQueue.main.async {
+                self.presentError(with: message)
+            }
         }
     }
 }
